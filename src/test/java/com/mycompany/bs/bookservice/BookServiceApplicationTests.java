@@ -1,10 +1,10 @@
-package com.mycompany.bsbookservice;
+package com.mycompany.bs.bookservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BsBookServiceApplicationTests {
+public class BookServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

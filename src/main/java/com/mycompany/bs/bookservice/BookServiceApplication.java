@@ -1,13 +1,13 @@
-package com.mycompany.bsbookservice;
+package com.mycompany.bs.bookservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BsBookServiceApplication {
+public class BookServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BsBookServiceApplication.class, args);
+		SpringApplication.run(BookServiceApplication.class, args);
 	}
 
 }
