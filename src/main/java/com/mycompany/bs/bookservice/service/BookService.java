@@ -8,13 +8,16 @@ import java.util.stream.IntStream;
 import javax.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 import com.mycompany.bs.bookservice.dto.BookDto;
+import lombok.extern.apachecommons.CommonsLog;
 
+@CommonsLog
 @Service
 public class BookService {
 	
 	private final List<BookDto> books = new ArrayList<>();
 	
 	public BookDto getBook(Integer bookId) {
+		log.info("Getting book with bookid: " + bookId);
 		return books
 				.stream()
 				.filter(book -> bookId.equals(book.getId()))
@@ -23,6 +26,7 @@ public class BookService {
 	}
 	
 	public void updateBook(BookDto book) {
+		log.info("update book: " + book);
 		for (final BookDto bookDto: books) {
 			if (bookDto.getId().equals(book.getId())) {
 				bookDto.setCount(bookDto.getCount() - book.getCount());
@@ -31,6 +35,7 @@ public class BookService {
 	}
 	
 	public List<BookDto> getAllBooks() {
+		log.info("Getting all books: " + books);
 		return books;
 	}
 	
@@ -39,6 +44,7 @@ public class BookService {
 		IntStream
 			.range(1, 10)
 			.forEach(i -> books.add(new BookDto(i, "title"+i, "author"+i, now(), i + 100)));
+		log.info("initial Books setup: " + books);
 	}
 
 }
