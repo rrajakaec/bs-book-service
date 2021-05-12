@@ -1,1 +1,11 @@
-
+server:
+  servlet:
+    context-path: /bs-book-service
+logging:
+  file:
+    name: book-service.log
+    max-history: 1
+    path: /var/logs
+  level:
+    root: warn
+    com.mycompany.bs: debug
