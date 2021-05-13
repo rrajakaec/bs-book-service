@@ -1,4 +1,5 @@
 FROM adoptopenjdk/openjdk11:jdk-11.0.10_9-alpine
+VOLUME /var/log
 ARG JAR_FILE=target/*.jar
 ADD ${JAR_FILE} bs-book-service.jar
 RUN sh -c 'touch /bs-book-service.jar'
